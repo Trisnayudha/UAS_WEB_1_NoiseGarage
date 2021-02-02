@@ -25,13 +25,24 @@ if (isset($_POST['login'])) {
     // jika user terdaftar
     if ($user) {
         // verifikasi password
-        if ($password && $user["password"]) {
-            // buat Session
-            session_start();
-            $_SESSION["user"] = $user;
+        if ($user['level'] == "0") {
+            if ($password["password"]) {
+                // buat Session
+                session_start();
+                $_SESSION["user"] = $user;
 
-            // login sukses, alihkan ke halaman timeline
-            header("Location: admin");
+                // login sukses, alihkan ke halaman timeline
+                header("Location: admin");
+            }
+        } else {
+            if ($password["password"]) {
+                // buat Session
+                session_start();
+                $_SESSION["user"] = $user;
+
+                // login sukses, alihkan ke halaman timeline
+                header("Location: user");
+            }
         }
     }
 }
@@ -73,7 +84,7 @@ if (isset($_POST['login'])) {
                             </div>
                         </form>
                         <br>
-                        <a href="daftarAnggota.php" class="signup-image-link">Buat Akun</a>
+                        <a href="registrasi.php" class="signup-image-link">Buat Akun</a>
                     </div>
                 </div>
             </div>
