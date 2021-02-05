@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <img src="vendor/img/signin-image.jpg">
+                        <img src="assets/images/signin-image.jpg">
 
                     </div>
                     <div class="signin-form">
@@ -90,12 +90,12 @@ if (isset($_POST['login'])) {
             </div>
         </section>
     </div>
-    <link rel="stylesheet" href="vendor/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css">
     <!-- Main css -->
-    <link rel="stylesheet" href="vendor/css/style1.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/js/main.js"></script>
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

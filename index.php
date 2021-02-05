@@ -10,8 +10,7 @@
 
   <!-- Favicons -->
   <?php
-  require_once("auth.php");
-  include 'home/header.html';
+  include 'header.html';
   ?>
 </head>
 

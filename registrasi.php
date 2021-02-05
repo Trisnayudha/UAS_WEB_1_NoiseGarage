@@ -48,10 +48,10 @@ if (isset($_POST['register'])) {
     <title>Sign Up Form</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="vendor/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="vendor/css/style1.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -94,7 +94,7 @@ if (isset($_POST['register'])) {
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="vendor/img/signup-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
                         <a href="login.php" class="signup-image-link">Saya sudah punya akun</a>
                     </div>
                 </div>

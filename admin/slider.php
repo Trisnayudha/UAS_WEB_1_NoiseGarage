@@ -4,7 +4,7 @@ require_once('../auth.php');
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-userpic">
-            <img src="../vendor/img/<?php echo $_SESSION['user']['photo'] ?>" class="img-responsive" alt="">
+            <img src="vendor/img/<?php echo $_SESSION['user']['photo'] ?>" class="img-responsive" alt="">
         </div>
         <div class="profile-usertitle">
             <div class="profile-usertitle-name"><?php echo  $_SESSION["user"]["username"] ?></div>
@@ -35,11 +35,11 @@ require_once('../auth.php');
 
 <!--/.main-->
 
-<script src="../vendor/js/jquery-1.11.1.min.js"></script>
-<script src="../vendor/js/bootstrap.min.js"></script>
-<script src="..vendor/js/chart.min.js"></script>
-<script src="../vendor/js/chart-data.js"></script>
-<script src="../vendor/js/easypiechart.js"></script>
-<script src="../vendor/js/easypiechart-data.js"></script>
-<script src="../vendor/js/bootstrap-datepicker.js"></script>
-<script src="../vendor/js/custom.js"></script>
+<script src="vendor/js/jquery-1.11.1.min.js"></script>
+<script src="vendor/js/bootstrap.min.js"></script>
+<script src="vendor/js/chart.min.js"></script>
+<script src="vendor/js/chart-data.js"></script>
+<script src="vendor/js/easypiechart.js"></script>
+<script src="vendor/js/easypiechart-data.js"></script>
+<script src="vendor/js/bootstrap-datepicker.js"></script>
+<script src="vendor/js/custom.js"></script>
