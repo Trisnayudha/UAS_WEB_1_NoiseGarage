@@ -3,6 +3,9 @@ include 'header.php';
 include 'slider.php';
 
 ?>
+<?php
+require_once('data_otoparts.php');
+?>
 <title>NoiseGarage | Otoparts</title>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -44,34 +47,47 @@ include 'slider.php';
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Oli</td>
-                    <td>35.000</td>
-                    <td>Oli Yamaha</td>
-                    <td>1Ml</td>
-                    <td>Melakukan isi ulang oli</td>
-                    <td>
-                        <img src="../vendor/img/clients/sttb.png">
-                    </td>
-                    <td>
-                        <form action="editotoparts.php" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <input type="hidden" name="namadepan" />
-                            <input type="hidden" name="namabelakang" />
-                            <input type="hidden" name="email" />
-                            <input type="hidden" name="username">
+                <?php
+                $no = 0;
+                while ($row = $q->fetch()) :
+                    $no++;
+                    $id_otopart = $row['id_otopart'];
+                    $nama_otopart = $row['nama_otopart'];
+                    $harga_otopart = $row['harga_otopart'];
+                    $merek_otopart = $row['merek_otopart'];
+                    $ukuran_otopart = $row['ukuran_otopart'];
+                    $deskripsi_otopart = $row['deskripsi_otopart'];
+                    $image_otopart = $row['image_otopart'];
+                ?>
+                    <tr>
+                        <td><?php echo $no ?></td>
+                        <td><?php echo $nama_otopart ?></td>
+                        <td><?php echo $harga_otopart ?></td>
+                        <td><?php echo $merek_otopart ?></td>
+                        <td><?php echo $ukuran_otopart ?></td>
+                        <td><?php echo $deskripsi_otopart ?></td>
+                        <td align="center">
+                            <img src="vendor/img/otoparts/" <?php echo $image_otopart
+                                                            ?> width="150px">
+                        </td>
+                        <td>
+                            <form action="editotoparts.php" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <input type="hidden" name="namadepan" />
+                                <input type="hidden" name="namabelakang" />
+                                <input type="hidden" name="email" />
+                                <input type="hidden" name="username">
 
-                            <button type=" submit" class="btn btn-primary">Edit</button>
+                                <button type=" submit" class="btn btn-primary">Edit</button>
 
+                            </form>
+                            <form action="config/hapus.php" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                        </td>
                         </form>
-                        <form action="config/hapus.php" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                    </td>
-                    </form>
-                </tr>
-
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>

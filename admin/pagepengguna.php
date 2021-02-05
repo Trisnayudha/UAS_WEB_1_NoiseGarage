@@ -3,6 +3,9 @@ include 'header.php';
 include 'slider.php';
 
 ?>
+<?php
+require_once('data_pengguna.php');
+?>
 <title>NoiseGarage | Data Pengguna</title>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -42,30 +45,42 @@ include 'slider.php';
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Trisnayudha</td>
-                    <td>083121257</td>
-                    <td>Jl kenangan</td>
-                    <td>Trisna@gmail.com</td>
-                    <td>
-                        <form action="editpengguna.php" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <input type="hidden" name="namadepan" />
-                            <input type="hidden" name="namabelakang" />
-                            <input type="hidden" name="email" />
-                            <input type="hidden" name="username">
+                <?php
+                $no = 0;
+                while ($row = $q->fetch()) :
+                    $no++;
+                    $username = $row['username'];
+                    $level = $row['level'];
+                    $email = $row['email'];
+                    $alamat = $row['alamat'];
+                    $telepon = $row['telepon'];
+                    $password = $row['password'];
+                    $photo = $row['photo'];
+                ?>
+                    <tr>
+                        <td><?php echo $no ?></td>
+                        <td><?php echo $username ?></td>
+                        <td><?php echo $telepon ?></td>
+                        <td><?php echo $alamat ?></td>
+                        <td><?php echo $email ?></td>
+                        <td>
+                            <form action="editpengguna.php" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <input type="hidden" name="namadepan" />
+                                <input type="hidden" name="namabelakang" />
+                                <input type="hidden" name="email" />
+                                <input type="hidden" name="username">
 
-                            <button type=" submit" class="btn btn-primary">Edit</button>
+                                <button type=" submit" class="btn btn-primary">Edit</button>
 
+                            </form>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                        </td>
                         </form>
-                        <form action="#" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                    </td>
-                    </form>
-                </tr>
-
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>

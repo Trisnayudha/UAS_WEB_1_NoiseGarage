@@ -1,13 +1,16 @@
 <?php
 include 'header.php';
 include 'slider.php';
+?>
 
+<?php
+require_once('data_service.php');
 ?>
 <title>NoiseGarage - Service</title>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="../index.php">
+            <li><a href="index.php">
                     <em class="fa fa-home"></em>
                 </a></li>
             <li class="active">Service</li>
@@ -46,34 +49,47 @@ include 'slider.php';
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Turun mesin</td>
-                    <td>350.000</td>
-                    <td>Yamaha</td>
-                    <td>1 Buah mesin</td>
-                    <td>Melakukan penurusan mesin</td>
-                    <td>
-                        <img src="../vendor/img/clients/sttb.png">
-                    </td>
-                    <td>
-                        <form action="editservice.php" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <input type="hidden" name="namadepan" />
-                            <input type="hidden" name="namabelakang" />
-                            <input type="hidden" name="email" />
-                            <input type="hidden" name="username">
+                <?php
+                $no = 0;
+                while ($row = $q->fetch()) :
+                    $no++;
+                    $id_service = $row['id_service'];
+                    $nama_service = $row['nama_service'];
+                    $harga_service = $row['harga_service'];
+                    $merek_service = $row['merek_service'];
+                    $ukuran_service = $row['ukuran_service'];
+                    $deskripsi_service = $row['deskripsi_service'];
+                    $image_service = $row['image_service'];
+                ?>
+                    <tr>
+                        <td><?php echo $no ?></td>
+                        <td><?php echo $nama_service ?></td>
+                        <td><?php echo $harga_service ?></td>
+                        <td><?php echo $merek_service ?></td>
+                        <td><?php echo $ukuran_service ?></td>
+                        <td><?php echo $deskripsi_service ?></td>
+                        <td align="center">
+                            <img src="vendor/img/servis/" <?php echo $image_service
+                                                            ?> width="150px">
+                        </td>
+                        <td>
+                            <form action="editservice.php" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <input type="hidden" name="namadepan" />
+                                <input type="hidden" name="namabelakang" />
+                                <input type="hidden" name="email" />
+                                <input type="hidden" name="username">
 
-                            <button type=" submit" class="btn btn-primary">Edit</button>
+                                <button type=" submit" class="btn btn-primary">Edit</button>
 
+                            </form>
+                            <form action="config/hapus.php" method="POST">
+                                <input type="hidden" name="id_reg" />
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                        </td>
                         </form>
-                        <form action="config/hapus.php" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                    </td>
-                    </form>
-                </tr>
-
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>
