@@ -59,3 +59,19 @@ include 'slider.php';
     </div>
 
 </div>
+<script src="modul/JQuery/jquery.min.js"></script>
+
+<!-- CSS dan JS DataTable -->
+<script src="modul/DataTable/datatables.min.js"></script>
+<script src="modul/DataTable/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataregister').DataTable({
+            "aLengthMenu": [
+                [5, 10, 25, -1],
+                [5, 10, 25, "All"]
+            ],
+            "iDisplayLength": 5
+        });
+    });
+</script>

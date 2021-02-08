@@ -20,22 +20,37 @@ include 'slider.php';
         <div class="panel-heading">Forms</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form">
+                <form role="form" action="config/addservice.php" method="POST">
                     <div class="form-group">
                         <label>Nama Service</label>
-                        <input class="form-control" placeholder="Nama Barang">
-                        <label>Harga Service</label>
-                        <input class="form-control" placeholder="Rp 5x.xxx">
-                        <label>Merk Service</label>
-                        <input class="form-control" placeholder="Merk Service">
-                        <label>Ukuran Service</label>
-                        <input class="form-control" placeholder="Ukuran Service">
-                        <label>Deskripsi</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                        <label>File image</label>
-                        <input type="file">
+                        <input class="form-control" placeholder="Nama Barang" name="nama_service">
                     </div>
-                    <button type="button" class="btn btn-md btn-primary">Submit</button>
+                    <div class="form-group">
+                        <label>Harga Service</label>
+                        <input class="form-control" placeholder="Rp 5x.xxx" name="harga_service">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Merk Service</label>
+                        <input class="form-control" placeholder="Merk Service" name="merek_service">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Ukuran Service</label>
+                        <input class="form-control" placeholder="Ukuran Service" name="ukuran_service">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Deskripsi</label>
+                        <textarea class="form-control" rows="3" name="deskripsi_service"></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <label>File image</label>
+                        <input type="file" name="image_service">
+
+                    </div>
+                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
             </div>
         </div>

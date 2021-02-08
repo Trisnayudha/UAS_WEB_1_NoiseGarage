@@ -1,6 +1,13 @@
 <?php
 include 'header.php';
 include 'slider.php';
+$id_service = $_POST['id_service'];
+$nama_service = $_POST['nama_service'];
+$harga_service = $_POST['harga_service'];
+$merek_service = $_POST['merek_service'];
+$ukuran_service = $_POST['ukuran_service'];
+$deskripsi_service = $_POST['deskripsi_service'];
+$image_service = $_POST['image_service'];
 
 ?>
 <title>NoiseGarage | Edit Service</title>
@@ -20,22 +27,38 @@ include 'slider.php';
         <div class="panel-heading">Forms</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form">
+                <form role="form" action="config/editservice.php" method="POST">
                     <div class="form-group">
                         <label>Nama Service</label>
-                        <input class="form-control" placeholder="Nama Barang">
-                        <label>Harga Service</label>
-                        <input class="form-control" placeholder="Rp 5x.xxx">
-                        <label>Merk Service</label>
-                        <input class="form-control" placeholder="Merk Service">
-                        <label>Ukuran Service</label>
-                        <input class="form-control" placeholder="Ukuran Service">
-                        <label>Deskripsi</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                        <label>File image</label>
-                        <input type="file">
+                        <input class="form-control" name="nama_service" value="<?= $nama_service ?>">
                     </div>
-                    <button type="button" class="btn btn-md btn-primary">Update</button>
+                    <div class="form-group">
+                        <label>Harga Service</label>
+                        <input class="form-control" name="harga_service" value="<?= $harga_service ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Merk Service</label>
+                        <input class="form-control" name="merek_service" value="<?= $merek_service ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Ukuran Service</label>
+                        <input class="form-control" name="ukuran_service" value="<?= $ukuran_service ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Deskripsi</label>
+                        <textarea class="form-control" rows="3" name="deskripsi_service"><?= $deskripsi_service ?></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <label>File image</label>
+                        <input type="file" name="image_service">
+
+                    </div>
+                    <input type="hidden" name="id_service" value="<?= $id_service ?>" />
+                    <button type="submit" class="btn btn-md btn-primary">Update</button>
                 </form>
             </div>
         </div>

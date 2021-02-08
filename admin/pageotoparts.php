@@ -67,9 +67,10 @@ require_once('data_otoparts.php');
                         <td><?php echo $ukuran_otopart ?></td>
                         <td><?php echo $deskripsi_otopart ?></td>
                         <td align="center">
-                            <img src="vendor/img/otoparts/" <?php echo $image_otopart
-                                                            ?> width="150px">
+                            <img src="vendor/img/otoparts/<?php echo $image_otopart
+                                                            ?>" class="img-responsive" width="150px">
                         </td>
+
                         <td>
                             <form action="editotoparts.php" method="POST">
                                 <input type="hidden" name="id_reg" />
@@ -94,11 +95,19 @@ require_once('data_otoparts.php');
 
 </div>
 
-
-<!-- <link rel="stylesheet" href="../vendor/css/bootstrap.min.css"> -->
-<script language="Javascript" src="../vendor/js/bootstrap.min.js"> </script>
-<script src="../vendor/JQuery/jquery.min.js"></script>
+<script src="modul/JQuery/jquery.min.js"></script>
 
 <!-- CSS dan JS DataTable -->
-<script src="../vendor/DataTable/datatables.min.js"></script>
-<script src="../vendor/DataTable/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script src="modul/DataTable/datatables.min.js"></script>
+<script src="modul/DataTable/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataregister').DataTable({
+            "aLengthMenu": [
+                [5, 10, 25, -1],
+                [5, 10, 25, "All"]
+            ],
+            "iDisplayLength": 5
+        });
+    });
+</script>

@@ -25,7 +25,6 @@ require_once('data_service.php');
     </div>
     <!--/.row-->
 
-
     <div class="table-responsive">
         <div>
             <a href="addservice.php" class="btn btn-primary">
@@ -35,7 +34,7 @@ require_once('data_service.php');
         </div>
         <br>
 
-        <table id="dataregister" class="table table-striped table-bordered" style="width:100%">
+        <table id="dataservice" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Nomor</th>
@@ -69,22 +68,23 @@ require_once('data_service.php');
                         <td><?php echo $ukuran_service ?></td>
                         <td><?php echo $deskripsi_service ?></td>
                         <td align="center">
-                            <img src="vendor/img/servis/" <?php echo $image_service
-                                                            ?> width="150px">
+                            <img src="vendor/img/servis/<?= $image_service ?>" width="150px">
                         </td>
                         <td>
                             <form action="editservice.php" method="POST">
-                                <input type="hidden" name="id_reg" />
-                                <input type="hidden" name="namadepan" />
-                                <input type="hidden" name="namabelakang" />
-                                <input type="hidden" name="email" />
-                                <input type="hidden" name="username">
+                                <input type="hidden" name="id_service" value="<?= $id_service?>"/>
+                                <input type="hidden" name="nama_service" value="<?= $nama_service?>"/>
+                                <input type="hidden" name="harga_service" value="<?=$harga_service ?>"/>
+                                <input type="hidden" name="merek_service" value="<?=$merek_service ?>"/>
+                                <input type="hidden" name="ukuran_service"value="<?= $ukuran_service?>"/>
+                                <input type="hidden" name="deskripsi_service"value="<?= $deskripsi_service?>"/>
+                                <input type="hidden" name="image_service"value="<?=$image_service ?>"/>
 
                                 <button type=" submit" class="btn btn-primary">Edit</button>
 
                             </form>
-                            <form action="config/hapus.php" method="POST">
-                                <input type="hidden" name="id_reg" />
+                            <form action="config/hapusservice.php" method="POST">
+                                <input type="hidden" name="id_service" value="<?= $id_service ?>" />
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                         </td>
                         </form>
@@ -95,12 +95,19 @@ require_once('data_service.php');
     </div>
 
 </div>
-
-
-<!-- <link rel="stylesheet" href="../vendor/css/bootstrap.min.css"> -->
-<script language="Javascript" src="../vendor/js/bootstrap.min.js"> </script>
-<script src="../vendor/JQuery/jquery.min.js"></script>
+<script src="modul/JQuery/jquery.min.js"></script>
 
 <!-- CSS dan JS DataTable -->
-<script src="../vendor/DataTable/datatables.min.js"></script>
-<script src="../vendor/DataTable/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script src="modul/DataTable/datatables.min.js"></script>
+<script src="modul/DataTable/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataregister').DataTable({
+            "aLengthMenu": [
+                [5, 10, 25, -1],
+                [5, 10, 25, "All"]
+            ],
+            "iDisplayLength": 5
+        });
+    });
+</script>
