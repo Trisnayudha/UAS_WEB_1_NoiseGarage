@@ -68,7 +68,7 @@ require_once('data_service.php');
                         <td><?php echo $ukuran_service ?></td>
                         <td><?php echo $deskripsi_service ?></td>
                         <td align="center">
-                            <img src="vendor/img/servis/<?= $image_service ?>" width="150px">
+                            <img src="vendor/img/servis/<?= $image_service ?>" class="img-responsive"width="150px">
                         </td>
                         <td>
                             <form action="editservice.php" method="POST">

@@ -20,22 +20,32 @@ include 'slider.php';
         <div class="panel-heading">Form Input</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form">
+                <form role="form" action="config/addotoparts.php" method="POST">
                     <div class="form-group">
                         <label>Nama Barang</label>
-                        <input class="form-control" placeholder="Nama Barang">
+                        <input class="form-control" placeholder="Nama Barang" name="nama_otopart">
+                    </div>
+                    <div class="form-group">
                         <label>Harga Barang</label>
-                        <input class="form-control" placeholder="Rp.5xx.xxx">
+                        <input class="form-control" placeholder="Rp.5xx.xxx" name="harga_otopart">
+                    </div>
+                    <div class="form-group">
                         <label>Merk Barang</label>
-                        <input class="form-control" placeholder="Merk Barang">
+                        <input class="form-control" placeholder="Merk Barang" name="merek_otopart">
+                    </div>
+                    <div class="form-group">
                         <label>Ukuran Barang</label>
-                        <input class="form-control" placeholder="Ukuran Barang">
+                        <input class="form-control" placeholder="Ukuran Barang" name="ukuran_otopart">
+                    </div>
+                    <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" name="deskripsi_otopart"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label>File image</label>
                         <input type="file">
                     </div>
-                    <button type="button" class="btn btn-md btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
             </div>
         </div>

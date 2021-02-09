@@ -67,23 +67,24 @@ require_once('data_otoparts.php');
                         <td><?php echo $ukuran_otopart ?></td>
                         <td><?php echo $deskripsi_otopart ?></td>
                         <td align="center">
-                            <img src="vendor/img/otoparts/<?php echo $image_otopart
-                                                            ?>" class="img-responsive" width="150px">
+                            <img src="vendor/img/otoparts/<?php echo $image_otopart ?>" class="img-responsive" width="150px">
                         </td>
 
                         <td>
                             <form action="editotoparts.php" method="POST">
-                                <input type="hidden" name="id_reg" />
-                                <input type="hidden" name="namadepan" />
-                                <input type="hidden" name="namabelakang" />
-                                <input type="hidden" name="email" />
-                                <input type="hidden" name="username">
+                                <input type="hidden" name="id_otopart" value="<?= $id_otopart ?>" />
+                                <input type="hidden" name="nama_otopart" value="<?= $nama_otopart ?>" />
+                                <input type="hidden" name="harga_otopart" value="<?= $harga_otopart ?>" />
+                                <input type="hidden" name="merek_otopart" value="<?= $merek_otopart ?>" />
+                                <input type="hidden" name="ukuran_otopart" value="<?= $ukuran_otopart ?>" />
+                                <input type="hidden" name="deskripsi_otopart" value="<?= $deskripsi_otopart ?>" />
+                                <input type="hidden" name="image_otopart" value="<?= $image_otopart ?>" />
 
                                 <button type=" submit" class="btn btn-primary">Edit</button>
 
                             </form>
-                            <form action="config/hapus.php" method="POST">
-                                <input type="hidden" name="id_reg" />
+                            <form action="config/hapusotoparts.php" method="POST">
+                                <input type="hidden" name="id_otopart" value="<?= $id_otopart ?>" />
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                         </td>
                         </form>
