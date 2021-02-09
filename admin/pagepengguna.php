@@ -49,8 +49,8 @@ require_once('data_pengguna.php');
                 $no = 0;
                 while ($row = $q->fetch()) :
                     $no++;
+                    $id = $row ['id'];
                     $username = $row['username'];
-                    $level = $row['level'];
                     $email = $row['email'];
                     $alamat = $row['alamat'];
                     $telepon = $row['telepon'];
@@ -64,18 +64,8 @@ require_once('data_pengguna.php');
                         <td><?php echo $alamat ?></td>
                         <td><?php echo $email ?></td>
                         <td>
-                            <form action="editpengguna.php" method="POST">
-                                <input type="hidden" name="id_reg" />
-                                <input type="hidden" name="namadepan" />
-                                <input type="hidden" name="namabelakang" />
-                                <input type="hidden" name="email" />
-                                <input type="hidden" name="username">
-
-                                <button type=" submit" class="btn btn-primary">Edit</button>
-
-                            </form>
-                            <form action="#" method="POST">
-                                <input type="hidden" name="id_reg" />
+                            <form action="config/hapuspengguna.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $id ?>"/>
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                         </td>
                         </form>

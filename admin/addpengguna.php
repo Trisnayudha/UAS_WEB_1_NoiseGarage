@@ -19,20 +19,33 @@ include 'slider.php';
         <div class="panel-heading">Form Input</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form">
+                <form role="form" action="config/addpengguna.php" method="POST">
                     <div class="form-group">
                         <label>Username</label>
-                        <input class="form-control" placeholder="Username">
-                        <label>Email</label>
-                        <input class="form-control" placeholder="Ex: Trisnayudha@gmail.com">
-                        <label>Alamat</label>
-                        <input class="form-control" placeholder="Jl kenangan">
-                        <label>Telepon</label>
-                        <input class="form-control" placeholder="+62">
-                        <label>Password</label>
-                        <input type="password" class="form-control">
+                        <input class="form-control" placeholder="Username" name="username">
                     </div>
-                    <button type="button" class="btn btn-md btn-primary">Submit</button>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" placeholder="Ex: Trisnayudha@gmail.com" name="email">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input class="form-control" placeholder="Jl kenangan" name="alamat">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Telepon</label>
+                        <input class="form-control" placeholder="+62" name="telepon">
+
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password">
+
+                    </div>
+
+                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>
             </div>
         </div>
