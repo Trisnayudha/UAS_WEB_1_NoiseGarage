@@ -20,7 +20,7 @@ include 'slider.php';
         <div class="panel-heading">Form Input</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form" action="config/addotoparts.php" method="POST">
+                <form role="form" action="config/addotoparts.php" method="POST"  enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Barang</label>
                         <input class="form-control" placeholder="Nama Barang" name="nama_otopart">
@@ -43,7 +43,7 @@ include 'slider.php';
                     </div>
                     <div class="form-group">
                         <label>File image</label>
-                        <input type="file">
+                        <input type="file" name="image_otopart">
                     </div>
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
                 </form>

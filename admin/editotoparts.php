@@ -26,35 +26,36 @@ $image_otopart = $_POST['image_otopart'];
         <div class="panel-heading">Form Input</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form" action="config/editotoparts.php" method="POST">
+                <form role="form" action="config/editotoparts.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Barang</label>
-                        <input class="form-control" name="nama_otopart" value="<?=$nama_otopart?>">
+                        <input class="form-control" name="nama_otopart" value="<?= $nama_otopart ?>">
                     </div>
                     <div class="form-group">
                         <label>Harga Barang</label>
-                        <input class="form-control"name="harga_otopart" value="<?=$harga_otopart?>">
-                    
+                        <input class="form-control" name="harga_otopart" value="<?= $harga_otopart ?>">
+
                     </div>
                     <div class="form-group">
                         <label>Merk Barang</label>
-                        <input class="form-control" name="merek_otopart" value="<?=$merek_otopart?>">
-                    
+                        <input class="form-control" name="merek_otopart" value="<?= $merek_otopart ?>">
+
                     </div>
                     <div class="form-group">
                         <label>Ukuran Barang</label>
-                        <input class="form-control" name="ukuran_otopart" value="<?=$ukuran_otopart?>">
-                    
+                        <input class="form-control" name="ukuran_otopart" value="<?= $ukuran_otopart ?>">
+
                     </div>
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea class="form-control" rows="3" name="deskripsi_otopart" ><?= $deskripsi_otopart?></textarea>
-                    
+                        <textarea class="form-control" rows="3" name="deskripsi_otopart"><?= $deskripsi_otopart ?></textarea>
+
                     </div>
                     <div class="form-group">
                         <label>File image</label>
-                        <input type="file">
-                    
+                        <input type="file" name="image_otopart">
+                        <br>
+                        <img src="vendor/img/otoparts/<?= $image_otopart ?>" class="img-rounded" width="150px" height="100px" />
                     </div>
                     <input type="hidden" name="id_otopart" value="<?= $id_otopart ?>" />
                     <button type="submit" class="btn btn-md btn-primary">Update</button>

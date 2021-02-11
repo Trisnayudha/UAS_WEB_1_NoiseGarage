@@ -20,7 +20,7 @@ include 'slider.php';
         <div class="panel-heading">Forms</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form" action="config/addservice.php" method="POST">
+                <form role="form" action="config/addservice.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Service</label>
                         <input class="form-control" placeholder="Nama Barang" name="nama_service">

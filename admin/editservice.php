@@ -27,7 +27,7 @@ $image_service = $_POST['image_service'];
         <div class="panel-heading">Forms</div>
         <div class="panel-body">
             <div class="col-md-6">
-                <form role="form" action="config/editservice.php" method="POST">
+                <form role="form" action="config/editservice.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Nama Service</label>
                         <input class="form-control" name="nama_service" value="<?= $nama_service ?>">
@@ -55,6 +55,8 @@ $image_service = $_POST['image_service'];
                     <div class="form-group">
                         <label>File image</label>
                         <input type="file" name="image_service">
+                        <br>
+                        <img src="vendor/img/servis/<?= $image_service ?>" class="img-rounded" width="150px" height="100px" />
 
                     </div>
                     <input type="hidden" name="id_service" value="<?= $id_service ?>" />
