@@ -10,7 +10,7 @@
 
   <!-- Favicons -->
   <?php
-  include 'header.html';
+  include 'home/header.html';
   ?>
 </head>
 
@@ -28,7 +28,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>
-                <p>BELAJAR PEMROGRAMAN SANGAT CEPAT DAN TERPERCAYA</p>
+                <p>BENGKEL DENGAN KUALITAS TERJAMIN DAN TERPERCAYA.</p>
 
               </div>
             </div>
@@ -39,11 +39,13 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>
-                <p>LULUSAN CERDAS CODDING DIJAMIN PROFESSIONAL</p>
+                <p>NOISE IN THE GARAGE, FULL TORQUE IN THE ROAD.</p>
 
               </div>
             </div>
           </div>
+
+
         </div>
 
         <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
@@ -58,15 +60,14 @@
 
       </div>
     </div>
-  </section>
 
-  <?php
+    <?php
 
-  include 'home/portofolio.html';
-  include 'home/support.html';
-  include 'footer.html';
-  ?>
-  <main id="main">
+    include 'home/portofolio.html';
+    // include 'home/support.html';
+    include 'footer.html';
+    ?>
+    <main id="main">
 
 
 
