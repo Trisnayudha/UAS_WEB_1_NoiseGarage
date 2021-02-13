@@ -12,7 +12,7 @@ if (isset($_POST['register'])) {
     $telepon = filter_input(INPUT_POST, 'telepon', FILTER_SANITIZE_STRING);
 
     // enkripsi password
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
 
     // menyiapkan query

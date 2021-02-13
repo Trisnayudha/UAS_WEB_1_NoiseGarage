@@ -4,45 +4,37 @@ require_once("config/koneksi.php");
 
 if (isset($_POST['login'])) {
 
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $username = $_POST['username']; // isi varibel dengan mengambil data username pada form
+    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM tabel_pengguna WHERE username=:username OR email=:email";
+    $sql = "SELECT * FROM tabel_pengguna WHERE username=:username AND password=:password";
     $stmt = $db->prepare($sql);
 
     // bind parameter ke query
     $params = array(
         ":username" => $username,
-        ":email" => $username
+        ":password" => $password
     );
 
     $stmt->execute($params);
-
-
-
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
     // jika user terdaftar
     if ($user) {
         // verifikasi password
         if ($user['level'] == "0") {
-            if ($password["password"]) {
-                // buat Session
-                session_start();
-                $_SESSION["user"] = $user;
+            // buat Session
+            session_start();
+            $_SESSION["user"] = $user;
 
-                // login sukses, alihkan ke halaman timeline
-                header("Location: admin");
-            }
+            // login sukses, alihkan ke halaman timeline
+            header("Location: admin");
         } else {
-            if ($password["password"]) {
-                // buat Session
-                session_start();
-                $_SESSION["user"] = $user;
+            // buat Session
+            session_start();
+            $_SESSION["user"] = $user;
 
-                // login sukses, alihkan ke halaman timeline
-                header("Location: user");
-            }
+            // login sukses, alihkan ke halaman timeline
+            header("Location: user");
         }
     }
 }

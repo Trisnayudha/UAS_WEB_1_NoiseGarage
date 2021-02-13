@@ -24,7 +24,7 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="vendor/img/intro-carousel/12.jpg" alt=""></div>
+            <div class="carousel-background"><img src="vendor/img/intro-carousel/1.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="vendor/img/intro-carousel/23.jpg" alt=""></div>
+            <div class="carousel-background"><img src="vendor/img/intro-carousel/2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>

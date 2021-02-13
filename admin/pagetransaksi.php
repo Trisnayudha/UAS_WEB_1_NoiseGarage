@@ -2,6 +2,9 @@
 include 'header.php';
 include 'slider.php';
 ?>
+<?php
+require_once 'data_transaksi.php';
+?>
 <title>NoiseGarage | Transaksi</title>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -25,35 +28,45 @@ include 'slider.php';
         <table id="datatransaksi" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Nomor</th>
+                    <th>No</th>
                     <th>ID Transaksi</th>
                     <th>ID Pengguna</th>
                     <th>ID Service</th>
+                    <th>Total Pembelian</th>
                     <th>ID Otoparts</th>
-                    <th>Tanggal</th>
-                    <th>Total Harga Pembelian</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>13352</td>
-                    <td>24</td>
-                    <td>31412</td>
-                    <td>512512</td>
-                    <td>24-07-2021</td>
-                    <td>Rp.1.500.000</td>
-                    <td>Approve</td>
-                    <td>
-                        <form action="#" method="POST">
-                            <input type="hidden" name="id_reg" />
-                            <button type="submit" class="btn btn-danger">Konfirmasi</button>
-                    </td>
-                    </form>
-                </tr>
-
+                <?php
+                $no = 0;
+                while ($row = $q->fetch()) :
+                    $no++;
+                    $id_transaksi = $row['id_transaksi'];
+                    $id = $row['id'];
+                    $id_service = $row['id_service'];
+                    $totalpembelian = $row['totalpembelian'];
+                    $id_otopart = $row['id_otopart'];
+                    $status = $row['status'];
+                ?>
+                    <tr>
+                        <td><?= $no ?></td>
+                        <td><?= $id_transaksi ?></td>
+                        <td><?= $id ?></td>
+                        <td><?= $id_service ?></td>
+                        <td><?= $totalpembelian ?></td>
+                        <td><?= $id_otopart ?></td>
+                        <td><?= $status ?></td>
+                        <td>
+                            <form action="config/konfirmasi.php" method="POST">
+                                <input type="hidden" name="id_transaksi" value="<?= $id_transaksi ?>" />
+                                <input type="hidden" name="status" value="<?= $status ?>" />
+                                <button type="submit" class="btn btn-danger">Konfirmasi</button>
+                        </td>
+                        </form>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>

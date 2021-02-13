@@ -1,8 +1,8 @@
 <?php
-require_once '../config/koneksi.php';
+require_once '../../config/koneksi.php';
 
 try {
-    $sql = 'SELECT * FROM `tabel_transaksi`';
+    $sql = 'SELECT * FROM `tabel_service`';
     $q = $db->query($sql);
     $q->setFetchMode(PDO::FETCH_ASSOC);
     // var_dump($q);
