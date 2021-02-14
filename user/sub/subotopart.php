@@ -189,51 +189,31 @@ require_once('../../auth.php');
       Footer
     ============================-->
     <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 footer-contact"></div>
+            <center>
+              <h4>Contact Us</h4>
+              <p>
+                Sekolah Tinggi Teknologi Bandung <br>
+                Jl. Soekarno-Hatta No.378, Kb. Lega, <br>
+                Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40235<br>
+                Indonesia <br>
+                <strong>Trisnayudha Bachtiar</strong> 18111165<br>
+                <strong>Mahasiswa</strong> TIF RP 18 CID A <br>
+              </p>
 
-
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <center>
-                            <h4>Contact Us</h4>
-                            <p>
-                                Jamika 70 <br>
-                                Bandung, West Java 40221<br>
-                                Indonesian <br>
-                                <strong>Phone:</strong> +62 89501805006<br>
-                                <strong>Email:</strong> noisegarage69@gmail.com <br>
-                            </p>
-
-                            <div class="social-links">
-                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                            </div>
-
-                    </div>
-
-
-
-                </div>
-            </div>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              </div>
+            </center>
+          </div>
         </div>
-
-
-        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-          -->
-
-        </div>
-        </div>
+      </div>
     </footer><!-- #footer -->
-
 
     <a href="../#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Uncomment below i you want to use a preloader -->
