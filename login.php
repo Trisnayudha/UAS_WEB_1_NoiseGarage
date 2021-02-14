@@ -27,17 +27,17 @@ if (isset($_POST['login'])) {
             $_SESSION["user"] = $user;
             
             // login sukses, alihkan ke halaman timeline
-            header("Location: admin");
-        } else if ($user['level'] == 1) {
+            header("Location: admin/index.php");
+        } else if ($user['level'] == 1)
+            {
             // buat Session
             session_start();
             $_SESSION["user"] = $user;
-            
 
             // login sukses, alihkan ke halaman timeline
-            header("Location: user");
-        } else {
-            echo "anda kurang beruntung";
+            header("Location: user/index.php");
+        }else{
+           echo "anda kurang beruntung"; 
         }
     }
 }

@@ -65,11 +65,11 @@ require_once('../../auth.php');
                     <li class="menu-active"><a href="../index.html">Home</a></li>
                     <li class="menu-has-children"><a href="../">Galeries</a>
                         <ul>
-                            <li><a href="../service.html">Service</a></li>
-                            <li><a href="../otoparts.html">OtoParts</a></li>
+                            <li><a href="../views/service.php">Service</a></li>
+                            <li><a href="../views/otoparts.php">OtoParts</a></li>
                         </ul>
                     </li>
-                    <li><a href="../login.html">Logout</a></li>
+                    <li><a href="../../logout.php">Logout</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
