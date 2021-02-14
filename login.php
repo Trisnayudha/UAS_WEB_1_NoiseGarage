@@ -25,16 +25,19 @@ if (isset($_POST['login'])) {
             // buat Session
             session_start();
             $_SESSION["user"] = $user;
-
+            
             // login sukses, alihkan ke halaman timeline
             header("Location: admin");
-        } else {
+        } else if ($user['level'] == 1) {
             // buat Session
             session_start();
             $_SESSION["user"] = $user;
+            
 
             // login sukses, alihkan ke halaman timeline
             header("Location: user");
+        } else {
+            echo "anda kurang beruntung";
         }
     }
 }
